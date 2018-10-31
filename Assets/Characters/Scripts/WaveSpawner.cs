@@ -3,6 +3,8 @@ using System.Collections;
 
 public class WaveSpawner : MonoBehaviour {
 
+    public GameObject imageTarget;
+    public GameObject tower;
 	public enum SpawnState { SPAWNING, WAITING, COUNTING };
 
 	[System.Serializable]
@@ -42,7 +44,7 @@ public class WaveSpawner : MonoBehaviour {
 	{
 		if (spawnPoints.Length == 0)
 		{
-			Debug.LogError("No spawn points referenced.");
+			//Debug.LogError("No spawn points referenced.");
 		}
 
 		waveCountdown = timeBetweenWaves;
@@ -77,15 +79,13 @@ public class WaveSpawner : MonoBehaviour {
 
 	void WaveCompleted()
 	{
-		Debug.Log("Wave Completed!");
-
 		state = SpawnState.COUNTING;
 		waveCountdown = timeBetweenWaves;
 
 		if (nextWave + 1 > waves.Length - 1)
 		{
 			nextWave = 0;
-			Debug.Log("ALL WAVES COMPLETE! Looping...");
+			
 		}
 		else
 		{
@@ -109,13 +109,12 @@ public class WaveSpawner : MonoBehaviour {
 
 	IEnumerator SpawnWave(Wave _wave)
 	{
-		Debug.Log("Spawning Wave: " + _wave.name);
 		state = SpawnState.SPAWNING;
 
 		for (int i = 0; i < _wave.count; i++)
 		{
 			SpawnEnemy(_wave.enemy);
-			yield return new WaitForSeconds( 1f/_wave.rate );
+            yield return new WaitForSeconds( 1f/_wave.rate );
 		}
 
 		state = SpawnState.WAITING;
@@ -123,12 +122,21 @@ public class WaveSpawner : MonoBehaviour {
 		yield break;
 	}
 
-	void SpawnEnemy(Transform _enemy)
-	{
-		Debug.Log("Spawning Enemy: " + _enemy.name);
+    float speed;
 
+    void SpawnEnemy(Transform _enemy)
+	{
 		Transform _sp = spawnPoints[ Random.Range (0, spawnPoints.Length) ];
-		Instantiate(_enemy, _sp.position, _sp.rotation);
-	}
+        /*
+        Vector3 targetDir = tower.transform.position - transform.position;
+        float step = speed * Time.deltaTime;
+        Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0f);
+        
+        Instantiate(_enemy, _sp.position, Quaternion.LookRotation(newDir));
+        */
+        
+        Instantiate(_enemy, _sp.position, _sp.rotation).transform.SetParent(imageTarget.transform);
+        
+    }
 
 }

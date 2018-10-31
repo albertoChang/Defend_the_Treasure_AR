@@ -27,11 +27,12 @@ public class EnemyMovement : MonoBehaviour {
         nav.SetDestination(target.position);
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision col)
     {
-        if (other.gameObject == tower)
+        if (col.gameObject.name == tower.name)
         {
-            nav.isStopped = true ;
+            nav.isStopped = true;
+            anim.SetTrigger("Collision");
         }
     }
 

@@ -576,8 +576,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4289199757966694}
   - component: {fileID: 95776817650236726}
-  - component: {fileID: 64535193619565196}
-  - component: {fileID: 135395681667699624}
+  - component: {fileID: 54418101962249738}
+  - component: {fileID: 135156820348124584}
   - component: {fileID: 195717829831940502}
   - component: {fileID: 114057093978029574}
   - component: {fileID: 114739847193403824}
@@ -995,7 +995,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1806810838098604}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 1.582, y: 0, z: 0}
   m_LocalScale: {x: 0.1875, y: 0.1875, z: 0.1875}
   m_Children:
@@ -1003,7 +1003,7 @@ Transform:
   - {fileID: 4928265404186046}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!4 &4310554731836440
 Transform:
   m_ObjectHideFlags: 1
@@ -1439,20 +1439,21 @@ Transform:
   m_Father: {fileID: 4880327563703556}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &64535193619565196
-MeshCollider:
+--- !u!54 &54418101962249738
+Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1806810838098604}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 0}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 84
+  m_CollisionDetection: 0
 --- !u!95 &95776817650236726
 Animator:
   serializedVersion: 3
@@ -1497,14 +1498,14 @@ MonoBehaviour:
   timeBetweenAttacks: 0.5
   attackDamage: 10
   tower: {fileID: 0}
---- !u!135 &135395681667699624
+--- !u!135 &135156820348124584
 SphereCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1806810838098604}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -1607,8 +1608,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3
-  m_Acceleration: 8
+  m_Speed: 1
+  m_Acceleration: 5
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
