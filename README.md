@@ -6,16 +6,16 @@ Beck es un aventurero del futuro que viajó a través del tiempo en búsqueda de
 
 Assets utilizados extraidos de la Tienda de assets de Unity (https://assetstore.unity.com/):
 
-VLADIMIR TIM
-Ultimate Cannon Tower
+##VLADIMIR TIM
+###Ultimate Cannon Tower
 https://assetstore.unity.com/packages/3d/props/weapons/ultimate-cannon-tower-91286 
 
-ROB LLOYD
-Ruined Tower
+##ROB LLOYD
+###Ruined Tower
 https://assetstore.unity.com/packages/3d/environments/fantasy/ruined-tower-7845 
 
-BITGEM
-Dungeon Plinth
+##BITGEM
+###Dungeon Plinth
 https://assetstore.unity.com/packages/3d/environments/dungeons/dungeon-plinth-3894 
 
 RAIN ENTERTAINMENT
