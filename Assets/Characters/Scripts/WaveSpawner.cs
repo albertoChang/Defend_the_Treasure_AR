@@ -6,6 +6,7 @@ public class WaveSpawner : MonoBehaviour {
     public GameObject imageTarget;
     public GameObject tower;
 	public enum SpawnState { SPAWNING, WAITING, COUNTING };
+    private bool activeWave;
 
 	[System.Serializable]
 	public class Wave
@@ -44,37 +45,48 @@ public class WaveSpawner : MonoBehaviour {
 	{
 		if (spawnPoints.Length == 0)
 		{
-			//Debug.LogError("No spawn points referenced.");
+			Debug.LogError("No spawn points referenced.");
 		}
 
 		waveCountdown = timeBetweenWaves;
 	}
 
+    public void activateWave()
+    {
+        activeWave = true;
+    }
+
 	void Update()
 	{
-		if (state == SpawnState.WAITING)
-		{
-			if (!EnemyIsAlive())
-			{
-				WaveCompleted();
-			}
-			else
-			{
-				return;
-			}
-		}
+        if (activeWave)
+        {
+            if (state == SpawnState.WAITING)
+            {
+                WaveCompleted();
+                /*
+                if (!EnemyIsAlive())
+                {
+                    WaveCompleted();
+                }
+                else
+                {
+                    return;
+                }
+                */
+            }
 
-		if (waveCountdown <= 0)
-		{
-			if (state != SpawnState.SPAWNING)
-			{
-				StartCoroutine( SpawnWave ( waves[nextWave] ) );
-			}
-		}
-		else
-		{
-			waveCountdown -= Time.deltaTime;
-		}
+            if (waveCountdown <= 0)
+            {
+                if (state != SpawnState.SPAWNING)
+                {
+                    StartCoroutine(SpawnWave(waves[nextWave]));
+                }
+            }
+            else
+            {
+                waveCountdown -= Time.deltaTime;
+            }
+        }
 	}
 
 	void WaveCompleted()
@@ -95,13 +107,13 @@ public class WaveSpawner : MonoBehaviour {
 
 	bool EnemyIsAlive()
 	{
-		searchCountdown -= Time.deltaTime;
+        searchCountdown -= Time.deltaTime;
 		if (searchCountdown <= 0f)
 		{
-			searchCountdown = 1f;
+            searchCountdown = 1f;
 			if (GameObject.FindGameObjectWithTag("Enemy") == null)
 			{
-				return false;
+                return false;
 			}
 		}
 		return true;
@@ -114,6 +126,7 @@ public class WaveSpawner : MonoBehaviour {
 		for (int i = 0; i < _wave.count; i++)
 		{
 			SpawnEnemy(_wave.enemy);
+
             yield return new WaitForSeconds( 1f/_wave.rate );
 		}
 
@@ -127,13 +140,6 @@ public class WaveSpawner : MonoBehaviour {
     void SpawnEnemy(Transform _enemy)
 	{
 		Transform _sp = spawnPoints[ Random.Range (0, spawnPoints.Length) ];
-        /*
-        Vector3 targetDir = tower.transform.position - transform.position;
-        float step = speed * Time.deltaTime;
-        Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0f);
-        
-        Instantiate(_enemy, _sp.position, Quaternion.LookRotation(newDir));
-        */
         
         Instantiate(_enemy, _sp.position, _sp.rotation).transform.SetParent(imageTarget.transform);
         
