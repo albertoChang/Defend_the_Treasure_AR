@@ -5,6 +5,7 @@ using UnityEngine.AI;
 public class EnemyMovement : MonoBehaviour {
 
     public GameObject tower;
+    EnemyAttack enemy_att;
 
     Animator anim;
     Transform target;
@@ -18,6 +19,7 @@ public class EnemyMovement : MonoBehaviour {
 
         anim = GetComponent<Animator>();
         nav = GetComponent<NavMeshAgent>();
+        enemy_att = GetComponent<EnemyAttack>();
 	}
 
     public void activateAgent()
@@ -33,6 +35,7 @@ public class EnemyMovement : MonoBehaviour {
         {
             nav.isStopped = true;
             anim.SetTrigger("Collision");
+            enemy_att.FoundTower(true);
         }
     }
 

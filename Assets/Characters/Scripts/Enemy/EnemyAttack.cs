@@ -3,40 +3,44 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour {
-
-    public float timeBetweenAttacks = 0.5f;
-    public int attackDamage = 10;
-    public GameObject tower;
+    
+    public float timeBetweenAttacks;
+    public int attackDamage;
+    GameObject tower;
+    Tower _tower;
 
     Animator anim;
-    //TowerHealth towerhealth;
-    //EnemyHealth enemyhealth;
-    bool towerInRange;
+    private bool towerInRange;
     float timer;
+    
 
 	// Use this for initialization
 	void Start () {
-        //towerhealth = tower.GetComponent<TowerHealth>();
         anim = GetComponent<Animator>();
+        tower = GameObject.FindGameObjectWithTag("Tower");
+        _tower = tower.GetComponent<Tower>();
     }
 
-    void OnTriggerEnter(Collider other)
+    public void FoundTower(bool found)
     {
-        if (other.gameObject == tower)
-        {
-            anim.SetTrigger("Collision");
-            towerInRange = true;
-        }
+        towerInRange = found;
     }
 
     // Update is called once per frame
     void Update () {
         timer += Time.deltaTime;
-
+        
         if (timer>= timeBetweenAttacks && towerInRange)
         {
-            //Attack();
+            Attack();
         }
-
+        
 	}
+
+    private void Attack()
+    {
+        timer = 0f;
+        
+        _tower.TakeDamage(attackDamage);
+    }
 }

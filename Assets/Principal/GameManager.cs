@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour {
     {
         //Mostrar pantalla de derrota
         //Destroy(tower.gameObject);
+        Debug.LogError("perdiste");
     }
 
     public void Pause()
