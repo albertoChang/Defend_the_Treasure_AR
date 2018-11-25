@@ -358,6 +358,7 @@ GameObject:
   - component: {fileID: 195468063760417682}
   - component: {fileID: 114786650227845824}
   - component: {fileID: 114744033044776136}
+  - component: {fileID: 114938591443284884}
   m_Layer: 0
   m_Name: GreenBandit
   m_TagString: Enemy
@@ -1456,8 +1457,8 @@ Animator:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1476574937765638}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: e91078282dac6e7468f6aaf63ea02ef8, type: 3}
-  m_Controller: {fileID: 9100000, guid: 8d267844ab283b44db536ce61c8c2d78, type: 2}
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 03b21f8ebc3eeb9498b03b35790c0bb0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -1582,6 +1583,26 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114938591443284884
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1476574937765638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24df9101d016acc40a95ce38ca28d2b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameters:
+    maxhealth: 200
+    armor: 10
+    damageFactor: 0
+    healthbar: {fileID: 114802058220627276}
+  VFX:
+    damageFX: {fileID: 1579546626485678, guid: 7db58c0e931b44d52826ad1829194c32, type: 2}
+    deactivateFX: {fileID: 1678728823176512, guid: 6a342b4d22c62404baf7bd6057f1bdb3,
+      type: 2}
 --- !u!135 &135938433492450574
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -1692,7 +1713,7 @@ NavMeshAgent:
   m_Acceleration: 5
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 0.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-// © Glitch Squirrel 2017;
-
 [System.Serializable]
 public class TurretParameters {
 
@@ -17,7 +15,7 @@ public class TurretParameters {
 	[Tooltip("Burst the force when hit")]
 	public float power;
 	[Tooltip("Pause between shooting")]
-	[Range(0.5f,2)]
+	[Range(0.1f,1)]
 	public float ShootingDelay;
 	[Tooltip("Radius of the turret view")]
 	public float radius;
@@ -65,7 +63,11 @@ public class Turret : MonoBehaviour {
 	public TurretFX VFX;
 	public TurretAudio SFX;
 
-	private void Awake() {
+    public Camera arcam;
+    public LayerMask layer_mask;
+    public bool buttonShot;
+
+    private void Awake() {
 		
 		GetComponent<SphereCollider> ().isTrigger = true;
 		GetComponent<SphereCollider> ().radius = parameters.radius;
@@ -73,8 +75,18 @@ public class Turret : MonoBehaviour {
 		GetComponent<BoxCollider> ().center =  new Vector3(0,1,0);
 	}
 
-	private void FixedUpdate () {
-		
+    public void setActiveShot()
+    {
+        buttonShot = true;
+    }
+
+    public void setDeactiveShot()
+    {
+        buttonShot = false;
+    }
+
+    private void FixedUpdate () {
+        
 		if (parameters.active == false) {
 			return;
 		}
@@ -85,7 +97,11 @@ public class Turret : MonoBehaviour {
 			
 		if (targeting.target != null) {
 			Aiming ();
-			Invoke ("Shooting", parameters.ShootingDelay);
+            //Debug.Log("Hola");
+            if (buttonShot)
+            {
+                Invoke("Shooting", parameters.ShootingDelay);
+            }
 		}
 	}
 
@@ -93,7 +109,7 @@ public class Turret : MonoBehaviour {
 
 	private void Shot() {
 
-		GetComponent<AudioSource> ().PlayOneShot (SFX.shotClip, Random.Range(0.75f,1));
+		GetComponent<AudioSource> ().PlayOneShot (SFX.shotClip, Random.Range(0.25f,0.75f));
 		GetComponent<Animator> ().SetTrigger ("Shot");
 		GameObject newShotFX = Instantiate (VFX.shotFX, VFX.muzzle);
 		Destroy (newShotFX, 2);
@@ -109,11 +125,12 @@ public class Turret : MonoBehaviour {
 			return;
 		}
 			
-		RaycastHit hit; 
-		if (Physics.Raycast (VFX.muzzle.position, VFX.muzzle.transform.forward, out hit, parameters.radius)) {
+		RaycastHit hit;
+        //Debug.DrawRay(VFX.muzzle.position, VFX.muzzle.transform.forward * parameters.radius, Color.black);
+        if (Physics.Raycast (VFX.muzzle.position, VFX.muzzle.transform.forward, out hit, parameters.radius, layer_mask)) {
 			if (CheckTags (hit.collider) == true) {
 				Shot ();
-				hit.collider.GetComponent<Actor> ().ReceiveDamage (parameters.power, hit.point);
+				hit.collider.GetComponent<EnemyHealth> ().ReceiveDamage (parameters.power, hit.point);
 			}
 
 			ClearTargets ();	
@@ -121,8 +138,21 @@ public class Turret : MonoBehaviour {
 		}
 	}
 
-	public void Aiming() {
+	public void Aiming()
+    {
+        RaycastHit hit;
+        float distance = 10000;
+        //Debug.DrawRay(arcam.transform.position, arcam.transform.forward * distance, Color.yellow);
 
+        if (Physics.Raycast(arcam.transform.position, arcam.transform.forward, out hit, distance, layer_mask))
+        {
+            Debug.Log(hit.transform.name);
+
+            transform.LookAt(hit.point);
+            VFX.muzzle.LookAt(hit.point);            
+        }
+
+        /*
 		if (targeting.target == null) {
 			return;
 		}
@@ -131,6 +161,7 @@ public class Turret : MonoBehaviour {
 		float angle = Vector3.Angle (transform.forward, delta);
 		Vector3 cross = Vector3.Cross (transform.forward, delta);
 		GetComponent<Rigidbody> ().AddTorque (cross * angle * targeting.aimingSpeed);
+        */
 	}
 
 	#endregion

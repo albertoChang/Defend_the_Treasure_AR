@@ -375,6 +375,7 @@ GameObject:
   - component: {fileID: 195330056714940700}
   - component: {fileID: 114455126201070510}
   - component: {fileID: 114787721788600106}
+  - component: {fileID: 114028751302770472}
   m_Layer: 0
   m_Name: CommonBandit3
   m_TagString: Enemy
@@ -1525,6 +1526,26 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114028751302770472
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1504075809383682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24df9101d016acc40a95ce38ca28d2b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameters:
+    maxhealth: 100
+    armor: 3
+    damageFactor: 0
+    healthbar: {fileID: 114233407289925040}
+  VFX:
+    damageFX: {fileID: 1579546626485678, guid: 7db58c0e931b44d52826ad1829194c32, type: 2}
+    deactivateFX: {fileID: 1678728823176512, guid: 6a342b4d22c62404baf7bd6057f1bdb3,
+      type: 2}
 --- !u!114 &114030970781075090
 MonoBehaviour:
   m_ObjectHideFlags: 1

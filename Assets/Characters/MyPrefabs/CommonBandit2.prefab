@@ -570,6 +570,7 @@ GameObject:
   - component: {fileID: 195765270283377942}
   - component: {fileID: 114731745376762242}
   - component: {fileID: 114797491920171626}
+  - component: {fileID: 114997422231226602}
   m_Layer: 0
   m_Name: CommonBandit2
   m_TagString: Enemy
@@ -1612,6 +1613,26 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114997422231226602
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1736278828138140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24df9101d016acc40a95ce38ca28d2b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameters:
+    maxhealth: 100
+    armor: 2
+    damageFactor: 0
+    healthbar: {fileID: 114950896422198100}
+  VFX:
+    damageFX: {fileID: 1579546626485678, guid: 7db58c0e931b44d52826ad1829194c32, type: 2}
+    deactivateFX: {fileID: 1678728823176512, guid: 6a342b4d22c62404baf7bd6057f1bdb3,
+      type: 2}
 --- !u!135 &135985399292828858
 SphereCollider:
   m_ObjectHideFlags: 1
