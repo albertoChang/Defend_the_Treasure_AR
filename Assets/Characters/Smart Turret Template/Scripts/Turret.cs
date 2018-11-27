@@ -94,15 +94,12 @@ public class Turret : MonoBehaviour {
 		if (targeting.target == null) {
 			ClearTargets ();
 		}
-			
-		if (targeting.target != null) {
-			Aiming ();
-            //Debug.Log("Hola");
-            if (buttonShot)
-            {
-                Invoke("Shooting", parameters.ShootingDelay);
-            }
-		}
+					
+		Aiming ();
+        if (buttonShot)
+        {
+            Invoke("Shooting", parameters.ShootingDelay);
+        }
 	}
 
 	#region Aiming and Shooting
@@ -116,11 +113,11 @@ public class Turret : MonoBehaviour {
 	}
 		
 	private void Shooting() {
-
+        /*
 		if (targeting.target == null) {
 			return;
 		}
-
+        */
 		if (parameters.canFire == false) {
 			return;
 		}
@@ -146,8 +143,6 @@ public class Turret : MonoBehaviour {
 
         if (Physics.Raycast(arcam.transform.position, arcam.transform.forward, out hit, distance, layer_mask))
         {
-            Debug.Log(hit.transform.name);
-
             transform.LookAt(hit.point);
             VFX.muzzle.LookAt(hit.point);            
         }
@@ -173,7 +168,7 @@ public class Turret : MonoBehaviour {
 		if (parameters.active == false) {
 			return;
 		}
-        Debug.Log("Entre al trigger");
+        //Debug.Log("Entre al trigger");
 		ClearTargets ();
 
 		if (CheckTags (other) == true) {

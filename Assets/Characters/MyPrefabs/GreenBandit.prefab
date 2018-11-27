@@ -1599,6 +1599,7 @@ MonoBehaviour:
     armor: 10
     damageFactor: 0
     healthbar: {fileID: 114802058220627276}
+    pirate_points: 200
   VFX:
     damageFX: {fileID: 1579546626485678, guid: 7db58c0e931b44d52826ad1829194c32, type: 2}
     deactivateFX: {fileID: 1678728823176512, guid: 6a342b4d22c62404baf7bd6057f1bdb3,

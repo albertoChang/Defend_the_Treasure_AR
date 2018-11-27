@@ -24,14 +24,15 @@ public class GameManager : MonoBehaviour {
         SceneManager.LoadScene(SceneIndex);
     }
 
-    public static void killPlayer(Tower tower)
+    public static void killPlayer(Tower tower,GameObject LosePanel)
     {
         //Mostrar pantalla de derrota
-        //Destroy(tower.gameObject);
+        Lose(LosePanel);
+        Pause();
         Debug.LogError("perdiste");
     }
 
-    public void Pause()
+    public static void Pause()
     {
         if (Time.timeScale == 1)
         {
@@ -39,7 +40,7 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    public void Resume()
+    public static void Resume()
     {
         if (Time.timeScale == 0)
         {
@@ -50,5 +51,18 @@ public class GameManager : MonoBehaviour {
     public void Spawn()
     {
         this.GetComponent<WaveSpawner>().activateWave();
+    }
+
+    public static void Won(GameObject WonPanel)
+    {
+        WonPanel.SetActive(true);
+        Pause();
+    }
+
+    public static void Lose(GameObject LosePanel)
+    {
+        LosePanel.SetActive(true);
+        
+        Pause();
     }
 }

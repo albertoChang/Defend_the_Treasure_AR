@@ -25,6 +25,7 @@ public class Tower : MonoBehaviour {
 
     [Header("Unity Stuff")]
     public Image healthBar;
+    public GameObject LosePanel;
 
     public TowerStats stats = new TowerStats();
 
@@ -39,7 +40,7 @@ public class Tower : MonoBehaviour {
         healthBar.fillAmount = (float) stats.currHealth / stats.life_tower;
         if (stats.currHealth <= 0)
         {
-            GameManager.killPlayer(this);
+            GameManager.killPlayer(this, LosePanel);
         }
     }
 }

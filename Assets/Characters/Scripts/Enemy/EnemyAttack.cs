@@ -13,7 +13,6 @@ public class EnemyAttack : MonoBehaviour {
     private bool towerInRange;
     float timer;
     
-
 	// Use this for initialization
 	void Start () {
         anim = GetComponent<Animator>();

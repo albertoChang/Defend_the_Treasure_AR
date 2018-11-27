@@ -12,6 +12,7 @@ public class EnemyHealthParameters
     public float armor;
     public float damageFactor;
     public Image healthbar;
+    public int pirate_points;
 }
 
 [System.Serializable]
@@ -77,9 +78,10 @@ public class EnemyHealth : MonoBehaviour {
                 GameObject newDeactivateFX = Instantiate(VFX.deactivateFX, transform.position, Quaternion.identity);
                 Destroy(newDeactivateFX, 3);
             }
-
+            Score.scoreValue += parameters.pirate_points;
             anim.SetTrigger("Dead");
             Destroy();
+            
         }
     }
 

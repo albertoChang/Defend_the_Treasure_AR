@@ -367,7 +367,7 @@ MonoBehaviour:
   parameters:
     active: 1
     canFire: 1
-    power: 10
+    power: 20
     ShootingDelay: 1
     radius: 5
   targeting:
@@ -382,6 +382,11 @@ MonoBehaviour:
     shotFX: {fileID: 1579546626485678, guid: 7db58c0e931b44d52826ad1829194c32, type: 2}
   SFX:
     shotClip: {fileID: 8300000, guid: 29c04ba19da834fb0968146ce5e3a847, type: 3}
+  arcam: {fileID: 0}
+  layer_mask:
+    serializedVersion: 2
+    m_Bits: 0
+  buttonShot: 0
 --- !u!135 &135129260667231404
 SphereCollider:
   m_ObjectHideFlags: 1
