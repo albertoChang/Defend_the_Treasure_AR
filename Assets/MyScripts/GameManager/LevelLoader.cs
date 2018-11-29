@@ -17,7 +17,10 @@ public class LevelLoader : MonoBehaviour {
         progressText = textmeshPro.GetComponent<TextMeshProUGUI>();
 
         if (sceneIndex == 0)
-            FindObjectOfType<AudioManager>().Stop("Loop 1 Tension"); 
+        {
+            FindObjectOfType<AudioManager>().Stop("Bonus Theme 1 Tribal Victory");
+            FindObjectOfType<AudioManager>().Stop("Bonus Theme 2 The Northmen March to War");
+        }             
         else if (sceneIndex == 1)
             FindObjectOfType<AudioManager>().Stop("Blood and Steel Loop");
 
@@ -42,7 +45,7 @@ public class LevelLoader : MonoBehaviour {
         {
             float progress = Mathf.Clamp01(operation.progress / .9f);
             slider.value = progress;
-            progressText.text = progress * 100f + "%";
+            progressText.text = ((int)(progress * 100f)) + "%";
             yield return null;
         }
 
