@@ -6,9 +6,9 @@ Beck es un aventurero del futuro que viajó a través del tiempo en búsqueda de
 
 Assets utilizados extraidos de la Tienda de assets de Unity (https://assetstore.unity.com/):
 
-### VLADIMIR TIM - Ultimate Cannon Tower
+### GLITCH SQUIRREL - Smart Turret Template
 
-https://assetstore.unity.com/packages/3d/props/weapons/ultimate-cannon-tower-91286 
+https://assetstore.unity.com/packages/tools/ai/smart-turret-template-87087
 
 ### ROB LLOYD - Ruined Tower
 
