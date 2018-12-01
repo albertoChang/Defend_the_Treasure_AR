@@ -75,7 +75,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Bonus Theme 2 The Northmen March to War
     clip: {fileID: 8300000, guid: e6203b2c85de4c240a42967822e0bd71, type: 3}
-    volume: 0.67
+    volume: 1
     pitch: 1
     loop: 1
     playOnAwake: 0

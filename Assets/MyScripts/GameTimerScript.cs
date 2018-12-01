@@ -35,6 +35,7 @@ public class GameTimerScript : MonoBehaviour {
             gameTimer = 0f;
             gameActive = false;
             GameManager.Won(WonPanel);
+            FindObjectOfType<WaveSpawner>().DeActivateWave();
         }
 	}
 }

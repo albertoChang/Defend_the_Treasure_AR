@@ -16,17 +16,9 @@ public class LevelLoader : MonoBehaviour {
     {
         progressText = textmeshPro.GetComponent<TextMeshProUGUI>();
 
-        if (sceneIndex == 0)
-        {
-            FindObjectOfType<AudioManager>().Stop("Bonus Theme 1 Tribal Victory");
-            FindObjectOfType<AudioManager>().Stop("Bonus Theme 2 The Northmen March to War");
-        }             
-        else if (sceneIndex == 1)
-            FindObjectOfType<AudioManager>().Stop("Blood and Steel Loop");
+        FindObjectOfType<AudioManager>().Stop();
 
         StartCoroutine(LoadAsynchronously(sceneIndex));
-
-        //FindObjectOfType<AudioManager>().Stop("At the Gates");
 
         if (sceneIndex == 0)
             FindObjectOfType<AudioManager>().Play("Blood and Steel Loop");
@@ -39,7 +31,6 @@ public class LevelLoader : MonoBehaviour {
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
 
         loadingScreen.SetActive(true);
-        //FindObjectOfType<AudioManager>().Play("At the Gates");
 
         while (!operation.isDone)
         {
@@ -48,9 +39,12 @@ public class LevelLoader : MonoBehaviour {
             progressText.text = ((int)(progress * 100f)) + "%";
             yield return null;
         }
+    }
 
-        
-
-        
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        FindObjectOfType<AudioManager>().Stop();
+        FindObjectOfType<AudioManager>().Play("Loop 1 Tension");
     }
 }

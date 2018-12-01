@@ -6,48 +6,35 @@ public class GameManager : MonoBehaviour {
 
     void Awake()
     {
-
+        FindObjectOfType<PauseScript>().Resume();
     }
     
     public static void killPlayer(Tower tower,GameObject LosePanel)
     {
         Lose(LosePanel);
+        FindObjectOfType<WaveSpawner>().DeActivateWave();
     }
-
-    public static void Pause()
-    {
-        if (Time.timeScale == 1)
-            Time.timeScale = 0;
-    }
-
-    public static void Resume()
-    {
-        if (Time.timeScale == 0)
-            Time.timeScale = 1;
-    }
-
+    
     public void Spawn()
     {
-        this.GetComponent<WaveSpawner>().activateWave();
+        GetComponent<WaveSpawner>().activateWave();
     }
 
     public static void Won(GameObject WonPanel)
     {
-        FindObjectOfType<AudioManager>().Stop("Loop 1 Tension");
+        FindObjectOfType<AudioManager>().Stop();
         FindObjectOfType<AudioManager>().Play("Bonus Theme 1 Tribal Victory");
         
         WonPanel.SetActive(true);
-        
-        Pause();
+        FindObjectOfType<PauseScript>().Pause();
     }
 
     public static void Lose(GameObject LosePanel)
     {
-        FindObjectOfType<AudioManager>().Stop("Loop 1 Tension");
+        FindObjectOfType<AudioManager>().Stop();
         FindObjectOfType<AudioManager>().Play("Bonus Theme 2 The Northmen March to War");
 
         LosePanel.SetActive(true);
-        
-        Pause();
+        FindObjectOfType<PauseScript>().Pause();
     }
 }
