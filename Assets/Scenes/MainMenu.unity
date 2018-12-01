@@ -7546,8 +7546,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -2325.25}
-  m_SizeDelta: {x: -76, y: 4649.5}
+  m_AnchoredPosition: {x: 0, y: -2125.25}
+  m_SizeDelta: {x: -76, y: 4249.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1432588890
 MonoBehaviour:
@@ -7583,26 +7583,23 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Autor:\r\nAlberto Gian Pierre Chang L\xF3pez\r\n\r\nM\xFAsica:\r\nTYLER
     CUNNINGHMAN\r\nFantasy Battle Music Pack Free\r\n\nhttps://assetstore.unity.com/packages/audio/music/fantasy-battle-music-free-pack-\r111581\n\r\nModelos:\r\nBICAMERAL
-    STUDIOS\r\nFree Island Collection. Consulta: 5 de Setiembre de 2018.\r\nhttps://assetstore.unity.com/packages/3d/environments/landscapes/free-island-collection-104753
-    \r\n\r\nBITGEM\r\nDungeon Plinth. Consulta: 5 de Setiembre de 2018.\r\n\r\nhttps://assetstore.unity.com/packages/3d/environments/dungeons/dungeon-plinth-3894
-    \r\n\r\nBLACK HAMMER\r\nFantasy Wooden GUI : Free. Consulta: 5 de Setiembre de
-    2018.\r\n\r\nhttps://assetstore.unity.com/packages/2d/gui/fantasy-wooden-gui-free-103811
-    \r\n\r\nBSHGAME\r\nSkeletons Pack. Consulta: 5 de Setiembre de 2018.\r\n\r\nhttps://assetstore.unity.com/packages/3d/characters/humanoids/skeletons-pack-1818
-    \r\n\r\nCOMEBACK\r\nStones and buried treasure. Consulta: 5 de Setiembre de 2018.\r\n\r\nhttps://assetstore.unity.com/packages/3d/environments/fantasy/stones-and-buried-treasure-95557
-    \r\n\r\nFAIRY SHOP\r\nTreasure chest \u2013 Free chest. Consulta: 5 de Setiembre
-    de 2018.\r\n\r\nhttps://assetstore.unity.com/packages/3d/props/interior/treasure-set-free-chest-72345\r\n\r\nGITHUB\r\nGitHub
-    for Unity. Consulta: 5 de Setiembre de 2018.\r\n\r\nhttps://assetstore.unity.com/packages/tools/version-control/github-for-unity-118069
-    \r\n\r\nIRONICGAME\r\nRPG - Skeleton. Consulta: 5 de Setiembre de 2018.\r\n\r\nhttps://assetstore.unity.com/packages/3d/characters/humanoids/rpg-skeleton-35463
-    \r\n\r\nMADFIREON\r\nSimple UI Elements. Consulta: 5 de Setiembre de 2018.\r\nhttps://assetstore.unity.com/packages/2d/gui/icons/simple-ui-elements-53276
-    \r\n\r\nMAND4 DESIGNS\r\nSimple Strategy Icons. Consulta: 5 de Setiembre de 2018.\r\nhttps://assetstore.unity.com/packages/2d/gui/icons/simple-strategy-icons-20425
-    \r\n\r\nRAIN ENTERTAINMENT\r\nBandit & Pirate Pack. Consulta: 5 de Setiembre de
-    2018.\r\n\r\nhttps://assetstore.unity.com/packages/3d/characters/humanoids/bandit-pirate-pack-124445
-    \r\n\r\nROB LLOYD\r\nRuined Tower. Consulta: 5 de Setiembre de 2018.\r\n\r\nhttps://assetstore.unity.com/packages/3d/environments/fantasy/ruined-tower-7845
-    \r\n\r\nSERGI NICOL\xC1S\r\nRusty Black Shovel. Consulta: 5 de Setiembre de 2018.\r\n\r\nhttps://assetstore.unity.com/packages/3d/props/tools/rusty-black-shovel-73088
-    \r\n\r\nSINEVFX\r\nTranslucent Crystals. Consulta: 5 de Setiembre de 2018.\r\n\r\nhttps://assetstore.unity.com/packages/3d/environments/fantasy/translucent-crystals-106274
-    \r\n\r\nTEAMJOKER\r\nFantasy Monster. Consulta: 5 de Setiembre de 2018.\r\n\r\nhttps://assetstore.unity.com/packages/3d/characters/humanoids/fantasy-monster-skeleton-35635
-    \r\n\r\nUNRULY GAMES\r\nSimple UI. Consulta: 5 de Setiembre de 2018.\r\nhttps://assetstore.unity.com/packages/2d/gui/icons/simple-ui-103969
-    \r\n\r\nVISYDE INTERACTIVES\r\nSimple Modern Crosshairs: Pack 1\r\nhttps://assetstore.unity.com/packages/2d/gui/icons/simple-modern-crosshairs-pack-1-79034
+    STUDIOS\r\nFree Island Collection.\n\nhttps://assetstore.unity.com/packages/3d/environments/landscapes/free-island-collection-104753
+    \r\n\r\nBITGEM\r\nDungeon Plinth.\n\r\nhttps://assetstore.unity.com/packages/3d/environments/dungeons/dungeon-plinth-3894
+    \r\n\r\nBLACK HAMMER\r\nFantasy Wooden GUI : Free.\n\r\nhttps://assetstore.unity.com/packages/2d/gui/fantasy-wooden-gui-free-103811
+    \r\n\r\nBSHGAME\r\nSkeletons Pack.\n\r\nhttps://assetstore.unity.com/packages/3d/characters/humanoids/skeletons-pack-1818
+    \r\n\r\nCOMEBACK\r\nStones and buried treasure.\n\r\nhttps://assetstore.unity.com/packages/3d/environments/fantasy/stones-and-buried-treasure-95557
+    \r\n\r\nFAIRY SHOP\r\nTreasure chest \u2013 Free chest.\n\r\nhttps://assetstore.unity.com/packages/3d/props/interior/treasure-set-free-chest-72345\r\n\r\nGITHUB\r\nGitHub
+    for Unity.\n\r\nhttps://assetstore.unity.com/packages/tools/version-control/github-for-unity-118069
+    \r\n\r\nIRONICGAME\r\nRPG - Skeleton.\n\r\nhttps://assetstore.unity.com/packages/3d/characters/humanoids/rpg-skeleton-35463
+    \r\n\r\nMADFIREON\r\nSimple UI Elements.\n\nhttps://assetstore.unity.com/packages/2d/gui/icons/simple-ui-elements-53276
+    \r\n\r\nMAND4 DESIGNS\r\nSimple Strategy Icons.\n\nhttps://assetstore.unity.com/packages/2d/gui/icons/simple-strategy-icons-20425
+    \r\n\r\nRAIN ENTERTAINMENT\r\nBandit & Pirate Pack. \n\r\nhttps://assetstore.unity.com/packages/3d/characters/humanoids/bandit-pirate-pack-124445
+    \r\n\r\nROB LLOYD\r\nRuined Tower.\n\r\nhttps://assetstore.unity.com/packages/3d/environments/fantasy/ruined-tower-7845
+    \r\n\r\nSERGI NICOL\xC1S\r\nRusty Black Shovel.\n\r\nhttps://assetstore.unity.com/packages/3d/props/tools/rusty-black-shovel-73088
+    \r\n\r\nSINEVFX\r\nTranslucent Crystals.\n\r\nhttps://assetstore.unity.com/packages/3d/environments/fantasy/translucent-crystals-106274
+    \r\n\r\nTEAMJOKER\r\nFantasy Monster.\n\r\nhttps://assetstore.unity.com/packages/3d/characters/humanoids/fantasy-monster-skeleton-35635
+    \r\n\r\nUNRULY GAMES\r\nSimple UI.\n\nhttps://assetstore.unity.com/packages/2d/gui/icons/simple-ui-103969
+    \r\n\r\nVISYDE INTERACTIVES\r\nSimple Modern Crosshairs: Pack 1\r\n\nhttps://assetstore.unity.com/packages/2d/gui/icons/simple-modern-crosshairs-pack-1-79034
     \r\n\nA\xF1o de publicaci\xF3n:\r\n2018"
 --- !u!222 &1432588891
 CanvasRenderer:
