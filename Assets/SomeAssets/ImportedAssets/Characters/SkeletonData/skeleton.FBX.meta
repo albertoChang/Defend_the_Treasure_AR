@@ -613,7 +613,7 @@ ModelImporter:
     - name: Bip01 L Foot
       parentName: L_Shin
       position: {x: -0.2310849, y: -0.0000000047683715, z: 0}
-      rotation: {x: 0.026620362, y: 0.01570477, z: -0.09074165, w: 0.9953947}
+      rotation: {x: 0.026620364, y: 0.015704772, z: -0.09074166, w: 0.99539477}
       scale: {x: 1.0000001, y: 1.0000001, z: 1}
     - name: Bip01 L Toe0
       parentName: Bip01 L Foot
@@ -698,7 +698,7 @@ ModelImporter:
     - name: Bip01 L Finger1
       parentName: L_Hand
       position: {x: -0.054018933, y: -0.0015790367, z: -0.007435655}
-      rotation: {x: 0.1486089, y: -0.050954595, z: -0.050244145, w: 0.98630357}
+      rotation: {x: 0.14860888, y: -0.050954595, z: -0.050244138, w: 0.98630357}
       scale: {x: 0.9999995, y: 0.99999964, z: 0.9999999}
     - name: Bip01 L Finger11
       parentName: Bip01 L Finger1
@@ -713,7 +713,7 @@ ModelImporter:
     - name: Bip01 R Clavicle
       parentName: Bip01 Neck
       position: {x: -0.0067298887, y: 0.017950324, z: -0.013256143}
-      rotation: {x: 0.6276001, y: 0.18931095, z: 0.7494083, w: -0.0930949}
+      rotation: {x: 0.62760013, y: 0.18931095, z: 0.74940836, w: -0.0930949}
       scale: {x: 0.99999994, y: 1, z: 1}
     - name: R_Shoulder
       parentName: Bip01 R Clavicle

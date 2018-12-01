@@ -56,7 +56,12 @@ public class WaveSpawner : MonoBehaviour {
         activeWave = true;
     }
 
-	void Update()
+    public void DeActivateWave()
+    {
+        activeWave = false;
+    }
+
+    void Update()
 	{
         //Debug.Log("active? " + activeWave);
         if (activeWave)

@@ -6,14 +6,10 @@ public class AudioManager : MonoBehaviour {
     public Sound[] sounds;
     public static AudioManager instance = null;
 
+    private Sound currentSong;
+
     void Awake()
     {
-        if (instance == null)
-            instance = this;
-        else if (instance != this)
-            Destroy(gameObject);
-        DontDestroyOnLoad(gameObject);
-
         foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
@@ -29,6 +25,11 @@ public class AudioManager : MonoBehaviour {
 
     void Start()
     {
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+            Destroy(gameObject);
+        DontDestroyOnLoad(gameObject);
         Play("Blood and Steel Loop");
     }
 
@@ -40,17 +41,23 @@ public class AudioManager : MonoBehaviour {
             Debug.LogWarning("Sound: " + name + " not found!");
             return;
         }
+        currentSong = s;
         s.source.Play();
     }
 
-    public void Stop(string name)
+    public void Stop()
     {
-        Sound s = Array.Find(sounds, sound => sound.name == name);
-        if (s == null)
+        if (currentSong == null)
         {
             Debug.LogWarning("Sound: " + name + " not found!");
             return;
         }
-        s.source.Stop();
+        currentSong.source.Stop();
     }
+
+    public void SetVol(float newVolume)
+    {
+        instance.currentSong.source.volume = newVolume;
+    }
+    
 }
