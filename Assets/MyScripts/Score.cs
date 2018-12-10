@@ -8,7 +8,8 @@ public class Score : MonoBehaviour {
 
     void Start () {
         scoreText = GetComponent<TextMeshProUGUI>();
-	}
+        scoreValue = 0;
+    }
 
     void Update()
     {
